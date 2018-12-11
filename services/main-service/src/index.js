@@ -49,11 +49,11 @@ app.use(
       });
     };
 
-    const movieServiceSchema = await ServiceSchema1();
-    const cosmicJsServiceSchema = await serviceSchema2();
+    const Schema1 = await ServiceSchema1();
+    const Schema2 = await serviceSchema2();
 
     const schema = mergeSchemas({
-      schemas: [movieServiceSchema, cosmicJsServiceSchema]
+      schemas: [Schema1, Schema2]
     });
 
     return {
