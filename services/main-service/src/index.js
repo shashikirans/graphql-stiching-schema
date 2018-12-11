@@ -29,7 +29,7 @@ app.use(
       fetch
     });
 
-    const createCosmicJsServiceSchema = async () => {
+    const serviceSchema2 = async () => {
       const schema = await introspectSchema(ServiceLink2);
 
       return makeRemoteExecutableSchema({
@@ -38,7 +38,7 @@ app.use(
       });
     };
 
-    const createMovieServiceSchema = async () => {
+    const ServiceSchema1 = async () => {
       const schema = await introspectSchema(ServiceLink1);
 
 
@@ -49,8 +49,8 @@ app.use(
       });
     };
 
-    const movieServiceSchema = await createMovieServiceSchema();
-    const cosmicJsServiceSchema = await createCosmicJsServiceSchema();
+    const movieServiceSchema = await ServiceSchema1();
+    const cosmicJsServiceSchema = await serviceSchema2();
 
     const schema = mergeSchemas({
       schemas: [movieServiceSchema, cosmicJsServiceSchema]
